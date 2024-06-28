@@ -57,7 +57,8 @@ const todoGenarator = (todoList) => {
 
     let deleteButtonelem = document.createElement("button");
     deleteButtonelem.addEventListener("click", () => {
-      todoList.pop(todo);
+      let index = todo.id -1
+      todoList.splice(index , 1)
       localStorage.setItem("todos",JSON.stringify(todoList))
       todoGenarator(todoList)
     });
